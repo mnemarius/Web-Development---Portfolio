@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column; /* Align items vertically */
+        }
+
+        #form {
+            height: 40%;
+            aspect-ratio: 1/1;
+            border: black 2px solid;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .back-link {
+            align-self: flex-start;
+            margin-left: 10px; /* Adjust as needed for spacing */
+            margin-top: 10px; /* Adjust as needed for spacing */
+        }
+
+        .btn {
+            width: 40%;
+        }
+
+        #submit {
+            display: block;
+            text-align: center;
+            align-self: center;
+        }
+
+        #again {
+            display: none;
+            text-align: center;
+        }
+
+        #correct {
+            display: none;
+            text-align: center;
+        }   
+
+    </style>
+</head>
+<body>
+    <div class="back-link">
+        <a href="../index.html">Back</a>
+    </div>
+    <div id="form">
+        <form>
+            <label id="username">Username</label>
+            <input type="text" name="username">
+            <br><br>
+            <label id="password">Password</label>
+            <input type="password" name="password">
+            <br><br>
+            <input class="btn" id="submit" type="submit" value="Submit" name="submit">
+            <input class="btn" id="again" type="submit" value="Try again!" name="again">
+            <input class="btn" id="correct" type="submit" value="Finally :o" name="correct">
+        </form>
+    </div>
+    <script>
+
+        const submit = document.getElementById("submit")
+        const again = document.getElementById("again")
+        const correct = document.getElementById("corret")
+
+
+
+        submit.addEventListener("mouseenter", function() {
+            if (username.value == undefined || password.value == undefined) {
+                this.style.display = "none"
+                again.style.display = "block"
+                again.style.alignSelf = "flex-end"
+            }            
+        })
+
+        again.addEventListener("mouseenter", function() {
+            if (username.value == undefined || password.value == undefined) {
+                this.style.display = "none"
+                submit.style.display = "block"
+                submit.style.alignSelf = "flex-start"
+            }            
+        })
+
+        again.addEventListener("mouseenter", function() {
+            this.style.display = "none"
+            submit.style.display = "block"
+        })
+
+
+    </script>
+</body>
+</html>
